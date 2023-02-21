@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  livemedtest.webapi:
+    image: ${DOCKER_REGISTRY-}livemedtestwebapi
+    build:
+      context: .
+      dockerfile: LiveMedTest.WebApi/Dockerfile

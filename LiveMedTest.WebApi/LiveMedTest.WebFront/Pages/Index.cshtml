@@ -1,0 +1,47 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Ejemplo para LiveMed</h1>
+</div>
+<table class="table">
+    <thead >
+        <tr class="table-primary">
+            <th scope="col">User</th>
+            <th scope="col">Country</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.Items)
+        {
+            <tr>
+                <td onclick="showData('@item.Name')">@item.Name</td>
+                <td onclick="showData('@item.Country')">@item.Country</td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
+
+<div class="modal" tabindex="-1" id="alertModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Alerta</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p id="message"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
